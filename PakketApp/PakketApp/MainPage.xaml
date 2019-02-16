@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PakketApp"
+             x:Class="PakketApp.MainPage">
+
+    <StackLayout>
+        
+        <Label>Gewicht Pakket:</Label>
+        <Entry Text="{ Binding SelectedWeight}"/>
+
+        <Label>Koerier</Label>
+        <Picker ItemsSource="{ Binding Couriers }"
+                SelectedItem="{ Binding SelectedCourier}"
+                ItemDisplayBinding="{ Binding Name}"
+                Title="Selecteer een koerier"/>
+
+
+        <Label>Versturen Naar</Label>
+        <Picker ItemsSource="{ Binding Countries }" 
+                SelectedItem="{ Binding SelectedCountry}"
+                ItemDisplayBinding="{ Binding Name}"
+                Title="Selecteer een land"/>
+
+        <Button Text="Bereken" Command="{Binding CalculateCommand}"/>
+        
+        <Label Text="{ Binding CalculatedPrice }"></Label>
+        
+        <Label Text="{ Binding ErrorText}"></Label>
+        
+    </StackLayout>
+
+</ContentPage>
